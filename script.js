@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const WHATSAPP_NUMBER = '5521966447779'; // Seu número de WhatsApp aqui
-    const GENERAL_PIX_KEY = "21966447779"; // Sua chave Pix geral aqui
+    const WHATSAPP_NUMBER = '5521966447779';
+    const GENERAL_PIX_KEY = "21966447779";
 
-    // --- Funções para o Modal Padrão (Compartilhar/QR Code do Site) ---
+
     const qrCodeBtn = document.getElementById('qrCodeBtn');
     const qrCodeModal = document.getElementById('qrCodeModal');
     const closeSiteQrButton = document.querySelector('#qrCodeModal .close-button');
@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Botão de Compartilhar ---
     const shareSiteBtn = document.getElementById('shareSiteBtn');
     if (shareSiteBtn) {
         shareSiteBtn.addEventListener('click', () => {
@@ -56,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Funcionalidade de Expandir/Contrair Produtos ---
     const toggleProductsBtn = document.getElementById('toggleProductsBtn');
     const productsContent = document.getElementById('productsContent');
     const toggleIcon = toggleProductsBtn ? toggleProductsBtn.querySelector('.toggle-icon') : null;
@@ -65,11 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleProductsBtn.addEventListener('click', () => {
             productsContent.classList.toggle('products-content-visible');
             productsContent.classList.toggle('products-content-hidden');
-            toggleIcon.classList.toggle('rotated'); // Rotaciona a seta
+            toggleIcon.classList.toggle('rotated');
         });
     }
 
-    // --- Modal para a Chave Pix Geral (MANTIDO NO CABEÇALHO) ---
     const generalPixBtnLink = document.getElementById('generalPixBtnLink');
     const generalPixModal = document.getElementById('generalPixModal');
     const closeGeneralPixButton = document.querySelector('#generalPixModal .close-button');
@@ -103,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- NOVO: Lógica para os Botões "Copiar Chave Pix Geral" dentro de CADA PRODUTO ---
     document.querySelectorAll('.copy-general-pix-button-item').forEach(button => {
         button.addEventListener('click', async () => {
             try {
@@ -116,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Lógica para Botão de Orçamento Personalizado no WhatsApp ---
     document.querySelectorAll('.whatsapp-budget-button').forEach(button => {
         button.addEventListener('click', (event) => {
             const productName = event.currentTarget.dataset.productName;
@@ -127,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- Lógica para o seletor de Placas PREMIUM (A6, A5, A4) ---
     const placaPremiumTypeSelect = document.getElementById('placa-premium-type-select');
     const placaPremiumImage = document.getElementById('placa-premium-image');
     const placaPremiumDimensions = document.getElementById('placa-premium-dimensions');
@@ -136,19 +130,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const placaPremiumOptions = {
         'a6-premium': {
-            imgSrc: 'placa.jpg', // Imagem da placa A6 Premium
+            imgSrc: 'placa.jpg',
             dimensions: 'Medidas: 11cm x 15cm',
             description: 'Transforme a experiência do seu cliente com placas NFC programáveis para promoções, informações de produtos ou informações do local. Contém proteção de resina que mantém o brilho e evita desgastes.',
             price: 'R$ 139,90',
         },
         'a5-premium': {
-            imgSrc: 'placa.jpg', // USANDO A MESMA IMAGEM DA A6 PREMIUM
+            imgSrc: 'placa.jpg',
             dimensions: 'Medidas: 15cm x 21cm',
             description: 'Transforme a experiência do seu cliente com placas NFC programáveis para promoções, informações de produtos ou informações do local. Contém proteção de resina que mantém o brilho e evita desgastes.',
             price: 'R$ 199,90',
         },
         'a4-premium': {
-            imgSrc: 'placa.jpg', // USANDO A MESMA IMAGEM DA A6 PREMIUM
+            imgSrc: 'placa.jpg',
             dimensions: 'Medidas: 21cm x 30cm',
             description: 'Ideal para recepções, propagandas e eventos. Permite que seus clientes acessem informações, menus ou promoções via NFC com um toque. Contém proteção de resina que mantém o brilho e evita desgastes.',
             price: 'R$ 269,90',
@@ -167,10 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
         placaPremiumTypeSelect.addEventListener('change', (event) => {
             updatePlacaPremiumDetails(event.target.value);
         });
-        updatePlacaPremiumDetails(placaPremiumTypeSelect.value); // Define os detalhes iniciais
+        updatePlacaPremiumDetails(placaPremiumTypeSelect.value);
     }
 
-    // --- Lógica para o seletor de Placas NORMAIS (A6, A5, A4) ---
     const placaComumTypeSelect = document.getElementById('placa-comum-type-select');
     const placaComumImage = document.getElementById('placa-comum-image');
     const placaComumDimensions = document.getElementById('placa-comum-dimensions');
@@ -179,19 +172,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const placaComumOptions = {
         'a6-comum': {
-            imgSrc: 'placa comum.png', // Imagem da placa A6 Comum
+            imgSrc: 'placa comum.png',
             dimensions: 'Medidas: 11cm x 15cm',
             description: 'Transforme a experiência do seu cliente com placas NFC programáveis para promoções, informações de produtos ou informações do local.',
             price: 'R$ 99,90',
         },
         'a5-comum': {
-            imgSrc: 'placa comum.png', // USANDO A MESMA IMAGEM DA A6 COMUM
+            imgSrc: 'placa comum.png',
             dimensions: 'Medidas: 15cm x 21cm',
             description: 'Transforme a experiência do seu cliente com placas NFC programáveis para promoções, informações de produtos ou informações do local.',
             price: 'R$ 159,90',
         },
         'a4-comum': {
-            imgSrc: 'placa comum.png', // USANDO A MESMA IMAGEM DA A6 COMUM
+            imgSrc: 'placa comum.png',
             dimensions: 'Medidas: 21cm x 29.7cm',
             description: 'Ideal para recepções, propagandas e eventos. Permite que seus clientes acessem informações, menus ou promoções via NFC com um toque.',
             price: 'R$ 219,90',
@@ -210,6 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
         placaComumTypeSelect.addEventListener('change', (event) => {
             updatePlacaComumDetails(event.target.value);
         });
-        updatePlacaComumDetails(placaComumTypeSelect.value); // Define os detalhes iniciais
+        updatePlacaComumDetails(placaComumTypeSelect.value); 
     }
 });
