@@ -1,12 +1,12 @@
-/* Estilos Gerais e Paleta de Cores */
+
 :root {
-    --primary-blue: #007bff; /* Um azul vibrante */
-    --dark-blue: #0056b3;    /* Um azul mais escuro para hover */
-    --light-blue: #e0f2ff;   /* Um azul bem claro */
+    --primary-blue: #007bff;
+    --dark-blue: #0056b3;
+    --light-blue: #e0f2ff;
     --white: #ffffff;
     --text-color: #333;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --content-background: rgba(255, 255, 255, 0.85); /* Fundo branco semi-transparente para as seções */
+    --content-background: rgba(255, 255, 255, 0.85);
 }
 
 body {
@@ -18,28 +18,27 @@ body {
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    background-color: var(--light-blue); /* Fundo padrão caso a imagem não carregue */
+    background-color: var(--light-blue);
     color: var(--text-color);
     position: relative;
     overflow-x: hidden;
 }
 
-/* Imagem de Fundo Personalizada */
+
 .background-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('background.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(80%); /* Escurece um pouco a imagem para o texto se destacar */
+    filter: brightness(80%);
     z-index: -1;
 }
 
-/* Cabeçalho com Botões de Compartilhar/QR Code */
 .main-header {
     width: 100%;
     padding: 15px 0;
@@ -57,7 +56,7 @@ body {
     gap: 15px;
     justify-content: center;
     width: 90%;
-    max-width: 500px; /* Mantido para 2 ou mais botões */
+    max-width: 500px;
 }
 
 .action-button {
@@ -75,7 +74,7 @@ body {
     justify-content: center;
     gap: 8px;
     flex-grow: 1;
-    text-align: center; /* Garante que o texto fique centralizado nos botões */
+    text-align: center;
 }
 
 .action-button:hover {
@@ -101,7 +100,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Conteúdo Principal (sem fundo próprio) */
 .content-wrapper {
     padding: 0;
     border-radius: 15px;
@@ -116,7 +114,7 @@ body {
     gap: 20px;
 }
 
-/* Aplicando fundo branco e sombra às seções individuais */
+
 .profile-section,
 .company-section,
 .social-media-section {
@@ -128,7 +126,6 @@ body {
     width: 100%;
 }
 
-/* Estilo base para products-cta-section que vai conter o botão e o conteúdo */
 .products-cta-section {
     background-color: var(--content-background);
     border-radius: 10px;
@@ -138,7 +135,7 @@ body {
     padding: 20px; 
 }
 
-/* Seção de Perfil */
+
 .profile-image-container {
     width: 130px;
     height: 130px;
@@ -169,7 +166,7 @@ body {
     margin-bottom: 0;
 }
 
-/* Seção da Empresa e Botões de Contato */
+
 .company-logo {
     max-width: 160px;
     height: auto;
@@ -190,7 +187,7 @@ body {
 }
 
 
-/* Seção de Redes Sociais */
+
 .social-media-section {
     display: flex;
     justify-content: center;
@@ -213,7 +210,7 @@ body {
     box-shadow: 0 2px 5px var(--shadow-color);
 }
 
-/* Estilos do Modal QR Code (geral) */
+
 .modal {
     display: none;
     position: fixed;
@@ -267,7 +264,7 @@ body {
     align-items: center;
 }
 
-/* --- Estilos para a seção de produtos expansível --- */
+
 .products-cta-section .full-width-button {
     display: flex;
     justify-content: center;
@@ -295,7 +292,7 @@ body {
 }
 
 .products-content-visible {
-    max-height: 5000px; /* Ajustado para um valor maior */
+    max-height: 5000px;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;
@@ -303,7 +300,7 @@ body {
     opacity: 1;
 }
 
-/* Novo estilo para os títulos das categorias de produtos */
+
 .products-category-title {
     font-size: 1.6em;
     color: var(--dark-blue);
@@ -367,28 +364,28 @@ body {
     margin-bottom: 20px;
 }
 
-/* Estilo para o novo botão de orçamento do WhatsApp */
+
 .whatsapp-budget-button {
-    background-color: #25D366; /* Verde WhatsApp */
-    margin-top: 10px; /* Espaço entre preço e botão */
+    background-color: #25D366;
+    margin-top: 10px;
 }
 
 .whatsapp-budget-button:hover {
     background-color: #1DA851;
 }
 
-/* Estilo para o botão de Copiar Chave Pix Geral dentro de cada item */
+
 .copy-general-pix-button-item {
-    background-color: #007bff; /* Cor do Pix, azul */
-    margin-top: 10px; /* Espaço entre o botão de orçamento e este */
+    background-color: #007bff;
+    margin-top: 10px;
 }
 
 .copy-general-pix-button-item:hover {
-    background-color: #0056b3; /* Azul mais escuro no hover */
+    background-color: #0056b3;
 }
 
 
-/* Estilos para o seletor de produtos */
+
 .product-options {
     margin-bottom: 15px; 
     width: 100%;
@@ -420,7 +417,7 @@ body {
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
-/* Estilos para o Modal da Chave Pix Geral */
+
 .general-pix-modal-content {
     max-width: 350px;
     padding-top: 40px;
@@ -438,7 +435,7 @@ body {
 }
 
 
-/* Media Query para telas menores */
+
 @media (max-width: 360px) {
     .product-name {
         font-size: 1.3em;
@@ -449,7 +446,7 @@ body {
     .product-price {
         font-size: 1.1em;
     }
-    .action-button { /* Aplica-se a todos os botões de ação genéricos */
+    .action-button { 
         padding: 8px 12px;
         font-size: 0.9em;
     }
@@ -463,6 +460,6 @@ body {
     }
     .whatsapp-budget-button,
     .copy-general-pix-button-item {
-        width: 100%; /* Garante que ocupem a largura total em telas pequenas */
+        width: 100%; 
     }
 }
