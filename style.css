@@ -1,0 +1,468 @@
+/* Estilos Gerais e Paleta de Cores */
+:root {
+    --primary-blue: #007bff; /* Um azul vibrante */
+    --dark-blue: #0056b3;    /* Um azul mais escuro para hover */
+    --light-blue: #e0f2ff;   /* Um azul bem claro */
+    --white: #ffffff;
+    --text-color: #333;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --content-background: rgba(255, 255, 255, 0.85); /* Fundo branco semi-transparente para as seções */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--light-blue); /* Fundo padrão caso a imagem não carregue */
+    color: var(--text-color);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Imagem de Fundo Personalizada */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(80%); /* Escurece um pouco a imagem para o texto se destacar */
+    z-index: -1;
+}
+
+/* Cabeçalho com Botões de Compartilhar/QR Code */
+.main-header {
+    width: 100%;
+    padding: 15px 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+.top-buttons-wrapper {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 90%;
+    max-width: 500px; /* Mantido para 2 ou mais botões */
+}
+
+.action-button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-grow: 1;
+    text-align: center; /* Garante que o texto fique centralizado nos botões */
+}
+
+.action-button:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+}
+
+.small-button {
+    padding: 10px 12px;
+    font-size: 0.9em;
+}
+
+.large-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.full-width-button {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Conteúdo Principal (sem fundo próprio) */
+.content-wrapper {
+    padding: 0;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Aplicando fundo branco e sombra às seções individuais */
+.profile-section,
+.company-section,
+.social-media-section {
+    background-color: var(--content-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Estilo base para products-cta-section que vai conter o botão e o conteúdo */
+.products-cta-section {
+    background-color: var(--content-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px; 
+}
+
+/* Seção de Perfil */
+.profile-image-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px auto;
+    border: 5px solid var(--primary-blue);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 2em;
+    color: var(--dark-blue);
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+}
+
+.profile-description {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Seção da Empresa e Botões de Contato */
+.company-logo {
+    max-width: 160px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.contact-buttons .action-button.large-button {
+    width: calc(50% - 5px);
+    margin: 0;
+}
+
+
+/* Seção de Redes Sociais */
+.social-media-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon-link {
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.social-icon-link:hover {
+    transform: scale(1.1);
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* Estilos do Modal QR Code (geral) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    text-align: center;
+    position: relative;
+    max-width: 320px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.qr-code-placeholder {
+    margin: 20px auto;
+    width: 180px;
+    height: 180px;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Estilos para a seção de produtos expansível --- */
+.products-cta-section .full-width-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.toggle-icon {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.products-content-hidden {
+    max-height: 0;
+    overflow: hidden; 
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    padding: 0;
+    margin-top: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.products-content-visible {
+    max-height: 5000px; /* Ajustado para um valor maior */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Novo estilo para os títulos das categorias de produtos */
+.products-category-title {
+    font-size: 1.6em;
+    color: var(--dark-blue);
+    margin: 30px 0 20px 0;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+}
+
+.product-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.product-item:last-child {
+    margin-bottom: 0; 
+}
+
+.product-image {
+    max-width: 120px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+.product-name {
+    font-size: 1.4em;
+    color: var(--dark-blue);
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+}
+
+.product-dimensions {
+    font-size: 0.85em;
+    color: #777;
+    margin: -5px 0 10px 0;
+}
+
+.product-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: var(--primary-blue);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o novo botão de orçamento do WhatsApp */
+.whatsapp-budget-button {
+    background-color: #25D366; /* Verde WhatsApp */
+    margin-top: 10px; /* Espaço entre preço e botão */
+}
+
+.whatsapp-budget-button:hover {
+    background-color: #1DA851;
+}
+
+/* Estilo para o botão de Copiar Chave Pix Geral dentro de cada item */
+.copy-general-pix-button-item {
+    background-color: #007bff; /* Cor do Pix, azul */
+    margin-top: 10px; /* Espaço entre o botão de orçamento e este */
+}
+
+.copy-general-pix-button-item:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+}
+
+
+/* Estilos para o seletor de produtos */
+.product-options {
+    margin-bottom: 15px; 
+    width: 100%;
+    text-align: center;
+}
+
+.product-select {
+    width: calc(100% - 40px);
+    max-width: 250px; 
+    padding: 10px 15px;
+    border: 1px solid var(--primary-blue);
+    border-radius: 20px;
+    background-color: var(--white);
+    color: var(--text-color);
+    font-size: 1em;
+    cursor: pointer;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20512%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M119.5%20326.9c-10.2%2010.2-26.6%2010.2-36.8%200L4.7%20247.9c-10.2-10.2-10.2-26.6%200-36.8L68.3%20146.3c10.2-10.2%2026.6-10.2%2036.8%200l24.6%2024.6c10.2%2010.2%2010.2%2026.6%200%2036.8L119.5%20326.9zm131.8%200c10.2%2010.2%2026.6%2010.2%2036.8%200L251.3%20247.9c10.2-10.2%2010.2-26.6%200-36.8L187.7%20146.3c-10.2-10.2-26.6-10.2-36.8%200l-24.6%2024.6c-10.2%2010.2-10.2%2026.6%200%2036.8L251.3%20326.9z%22%2F%3E%3C%2Fsvg%3E'); /* Seta customizada */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
+.product-select:focus {
+    outline: none;
+    border-color: var(--dark-blue);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Estilos para o Modal da Chave Pix Geral */
+.general-pix-modal-content {
+    max-width: 350px;
+    padding-top: 40px;
+}
+
+.pix-key-display {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--dark-blue);
+    background-color: var(--light-blue);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px auto;
+    word-break: break-all;
+}
+
+
+/* Media Query para telas menores */
+@media (max-width: 360px) {
+    .product-name {
+        font-size: 1.3em;
+    }
+    .product-description {
+        font-size: 0.85em;
+    }
+    .product-price {
+        font-size: 1.1em;
+    }
+    .action-button { /* Aplica-se a todos os botões de ação genéricos */
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+    .top-buttons-wrapper {
+        flex-wrap: wrap;
+        max-width: 95%;
+    }
+    .top-buttons-wrapper .small-button {
+        flex-grow: 1;
+        min-width: 120px;
+    }
+    .whatsapp-budget-button,
+    .copy-general-pix-button-item {
+        width: 100%; /* Garante que ocupem a largura total em telas pequenas */
+    }
+}
