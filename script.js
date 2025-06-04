@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const WHATSAPP_NUMBER = '5521966447779';
+    const WHATSAPP_NUMBER = '5521995298373';
     const GENERAL_PIX_KEY = "21966447779";
 
 
